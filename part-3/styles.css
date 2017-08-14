@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Lucida Grande", "Helvetica", sans-serif;
+}
+
+/* HEADER */
+.site-header {
+  flex: 0;
+  padding: 4px 0px;
+  border-bottom: 2px solid #ccc;
+  background-color: #eee;
+}
+
+.site-header > *:first-child {
+  margin-left: 12px;
+}
+
+.site-header h1 {
+  font-size: 24px;
+}
+
+/* CONTENT */
+.content {
+  padding: 4px 0;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* ROOM LIST */
+.room-list {
+  width: 100%;
+  font-size: 18px;
+}
+
+.room-list th {
+  text-align: left;
+}
+
+.room-list td {
+  padding: 10px 0px;
+}
+
+.room-list td button {
+  font-size: 18px;
+}
+
+/*MODAL=================*/
+
+.modal  {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  top: 25vh;
+  left: 25vw;
+  background: cyan;
+  z-index: 1;
+}
+
+.header-modal {
+  flex: .5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-modal h2 {
+  flex: 1;
+}
+
+.header-modal button {
+  flex: 0;
+  background-color: red;
+}
+
+.content-modal {
+  flex: 1;
+  display: flex;
+}
+
+.content-details {
+  flex: 1;
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.list-item {
+  display: flex;
+  flex: 1;
+  padding-bottom: 1.2em;
+  justify-content: space-around;
+}
+
+.footer-modal {
+  flex: .5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-modal button {
+  max-height: 60px;
+}
