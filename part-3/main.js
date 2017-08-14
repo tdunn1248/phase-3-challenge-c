@@ -4,11 +4,11 @@ const bookButtons = document.getElementsByClassName('btn-book')
 const dropdown = document.getElementsByClassName('nights')[0]
 const bookingTotal = document.getElementsByClassName('booking-total')[0]
 
+let booking = []
+
 dropdown.addEventListener('change', () => {
   calculateNights()
 })
-
-let booking = []
 
 function toggleModal() {
   if(modal.style.display == 'flex') {

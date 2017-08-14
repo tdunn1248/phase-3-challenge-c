@@ -88,11 +88,11 @@ response content type: application/json
 
 ### Requirements
 
-- [ ] __10:__ All files are stored under the `part-1/` folder
-- [ ] __10:__ All dependencies are specified in a `package.json` file
-- [ ] __10:__ Web server can be started with `npm start` command
-- [ ] __20:__ GET requests to the `/api/shout/:word` route responds with  content type `application/text`, as described in the example above
-- [ ] __80:__ POST requests to the `/api/array/merge` merge the two arrays provided in the request body and responds with the result. An invalid input should return a 400 response.
+- [X] __10:__ All files are stored under the `part-1/` folder
+- [X] __10:__ All dependencies are specified in a `package.json` file
+- [X] __10:__ Web server can be started with `npm start` command
+- [X] __20:__ GET requests to the `/api/shout/:word` route responds with  content type `application/text`, as described in the example above
+- [X] __80:__ POST requests to the `/api/array/merge` merge the two arrays provided in the request body and responds with the result. An invalid input should return a 400 response.
 
 ## Part 2: Command Line Hotel Management System
 
