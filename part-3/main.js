@@ -4,6 +4,9 @@ const bookButtons = document.getElementsByClassName('btn-book')
 const dropdown = document.getElementsByClassName('nights')[0]
 const bookingTotal = document.getElementsByClassName('booking-total')[0]
 
+const room = document.createElement('li')
+const price = document.createElement('span')
+
 let booking = []
 
 dropdown.addEventListener('change', () => {
@@ -39,9 +42,6 @@ function bookItem(room, price) {
   booking.push(room)
   booking.push(price)
 }
-
-const room = document.createElement('li')
-const price = document.createElement('span')
 
 function modalData() {
   room.classList.add('list-item')
