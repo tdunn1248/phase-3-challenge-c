@@ -1,0 +1,19 @@
+{
+  "name": "part-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hotel.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha || true"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "pg-promise": "^6.3.8"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
