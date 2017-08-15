@@ -15,10 +15,31 @@ function selectAllRooms() {
   return db.any('SELECT * FROM rooms')
 }
 
-function currentAndFutureBookings() {
-  return db.any('SELECT room.room_number, name, check_in, check_out FROM bookings,guests WHERE guests.id = bookings.guest_id')
+function currentAndFutureBookings(currentDate) {
+  return db.any('SELECT rooms.room_number, name, check_in, check_out FROM bookings,guests,rooms WHERE rooms.id = bookings.room_id AND guests.id = bookings.guest_id AND bookings.check_out > $1 ORDER BY bookings.check_out ASC', [currentDate])
+}
+
+function roomCapacityAndAvailibility(currentDate) {
+  return db.any(`
+        SELECT
+          rooms.room_number,
+          rooms.capacity,
+          exists (
+            SELECT true FROM bookings, rooms WHERE  
+          )
+
+        FROM
+          bookings,
+          rooms
+        WHERE
+          rooms.id = bookings.room_id
+          AND bookings.check_out > $1
+          AND bookings.check_in < $1
+        ORDER BY bookings.check_out ASC
+        `, [currentDate])
 }
 
 module.exports = {
-  listAllGuests
+  listAllGuests,
+  currentAndFutureBookings
 }
