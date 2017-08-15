@@ -1,6 +1,6 @@
 const db = require('./models/dbconfig')
 
-const {listAllGuests, currentAndFutureBookings} = require('./models/database')
+const {listAllGuests, currentAndFutureBookings, roomCapacityAndAvailibility} = require('./models/database')
 const {print} = require('./print.js')
 
 const managerInput = (command, argument) => {
@@ -9,10 +9,12 @@ const managerInput = (command, argument) => {
       listAllGuests().then(results => print(results)).catch((e) => console.log(e))
       break
     case 'rooms':
-      console.log('rooms')
+      roomCapacityAndAvailibility(argument).then(results => {
+        console.log(results)
+      }).catch(e => console.log(e))
       break
     case 'bookings':
-      currentAndFutureBookings(new Date()).then((results)=> {
+      currentAndFutureBookings(argument).then((results)=> {
         console.log(results)
       }).catch(e=> console.log(e))
       break
