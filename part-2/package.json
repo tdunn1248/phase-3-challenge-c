@@ -4,6 +4,9 @@
   "description": "",
   "main": "hotel.js",
   "scripts": {
+    "db:create": "dropdb --if-exists hotel_db && createdb hotel_db",
+    "db:schema": "psql hotel_db < ./models/schema.sql",
+    "db:insert": "psql hotel_db < ./models/load-data.sql",
     "test": "NODE_ENV=test mocha || true"
   },
   "author": "",

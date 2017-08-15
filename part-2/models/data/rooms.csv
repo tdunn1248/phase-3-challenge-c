@@ -1,4 +1,4 @@
-id,number,capacity
+id, room_number, capacity
 1,2A,2
 2,2B,3
 3,2C,2

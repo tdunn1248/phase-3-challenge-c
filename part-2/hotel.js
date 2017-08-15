@@ -1,9 +1,12 @@
 const db = require('./models/dbconfig')
 
+const {listAllGuests} = require('./models/database')
+const {print} = require('./print.js')
+
 const managerInput = (command, argument) => {
   switch(command) {
     case 'guests':
-      console.log('guests')
+      listAllGuests().then(results => print(results).catch((e) => console.log(e))
       break
     case 'rooms':
       console.log('rooms')
