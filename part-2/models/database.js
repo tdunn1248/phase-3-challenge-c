@@ -22,7 +22,6 @@ function currentAndFutureBookings(roomNum) {
                 ORDER BY bookings.check_out ASC`, [roomNum, currentDate])
 }
 
-
 function roomCapacityAndAvailability(onlyAvailable) {
   let currentDate = new Date()
   let whereClause = ` WHERE booked.room_id is NULL`

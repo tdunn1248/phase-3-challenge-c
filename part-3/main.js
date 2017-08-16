@@ -27,16 +27,21 @@ function toggleModal() {
 (function buttonListeners() {
   for (let i = 0; i < bookButtons.length; i++) {
     bookButtons[i].addEventListener('click', () => {
-      const theParent = bookButtons[i].parentNode
-      const godFather = theParent.parentNode
-      const roomNum = godFather.children[0].innerHTML
-      const roomPrice = godFather.children[2].innerHTML
-      bookItem(roomNum, roomPrice)
+      const selectedRoom = traverseDom(bookButtons[i])
+      bookItem(selectedRoom.roomNum, selectedRoom.roomPrice)
       modalData()
       toggleModal()
     })
   }
 }())
+
+function traverseDom(clickedButton) {
+  const grandpaNode = clickedButton.parentNode.parentNode
+  const roomNum = grandpaNode.children[0].innerHTML
+  const roomPrice = grandpaNode.children[2].innerHTML
+  const room = {roomNum,roomPrice}
+  return room
+}
 
 function bookItem(room, price) {
   booking.push(room)

@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const merge = require('./mergeFunction')
 const app = express()
 const port = 3012
-const merge = require('./mergeFunction')
 
 app.use(bodyParser.json())
 
@@ -11,9 +11,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/shout/:word', (req, res) => {
-  const modified = req.params.word.toUpperCase() + '!!!'
+  const ecstatic = req.params.word.toUpperCase() + '!!!'
   res.set('Content-type', 'application/text')
-  res.status(200).send(modified)
+  res.status(200).send(ecstatic)
 })
 
 app.post('/api/array/merge', (req, res) => {

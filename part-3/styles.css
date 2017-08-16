@@ -57,6 +57,7 @@ body {
   top: 25vh;
   left: 25vw;
   background: cyan;
+  border-radius: 1em;
   z-index: 1;
 }
 
@@ -64,16 +65,19 @@ body {
   flex: .5;
   display: flex;
   justify-content: space-between;
+
   align-items: center;
 }
 
 .header-modal h2 {
   flex: 1;
+  margin-left: .5em;
 }
 
 .header-modal button {
   flex: 0;
   background-color: red;
+  margin-right: .5em;
 }
 
 .content-modal {
@@ -92,6 +96,7 @@ body {
 .list-item {
   display: flex;
   flex: 1;
+  line-height: .2px
   padding-bottom: 1.2em;
   justify-content: space-around;
 }
@@ -99,9 +104,9 @@ body {
 .footer-modal {
   flex: .5;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .footer-modal button {
-  max-height: 60px;
+  max-height: 30px;
 }

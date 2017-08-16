@@ -1,27 +1,26 @@
 const db = require('./models/dbconfig')
-
-const {listAllGuests, currentAndFutureBookings, roomCapacityAndAvailability} = require('./models/database')
 const {logGuests,logRooms, logBookings} = require('./print.js')
+const {listAllGuests, currentAndFutureBookings, roomCapacityAndAvailability} = require('./models/database')
 
 const managerInput = (command, argument) => {
   switch(command) {
     case 'guests':
-      listAllGuests().then(results => {
-        logGuests(results)
-      }).catch((e) => console.log(e))
+      listAllGuests()
+        .then(guests => {logGuests(guests)})
+        .catch(e => console.log(e))
       break
     case 'rooms':
-      roomCapacityAndAvailability(argument).then(results => {
-        logRooms(results)
-      }).catch(e => console.log(e))
+      roomCapacityAndAvailability(argument)
+        .then(rooms => {logRooms(rooms)})
+        .catch(e => console.log(e))
       break
     case 'bookings':
-      currentAndFutureBookings(argument).then(results => {
-        logBookings(results)
-      }).catch(e=> console.log(e))
+      currentAndFutureBookings(argument)
+        .then(bookings => {logBookings(bookings)})
+        .catch(e => console.log(e))
       break
     default:
-      console.log(`Sorry, ${command} is not a valid command`)
+      console.log(`${command} is not valid input`)
       break
   }
 }
