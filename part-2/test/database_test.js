@@ -10,7 +10,7 @@ describe('listAllGuests()', function() {
       expect(typeof results).to.eql('object')
       expect(results[0]).to.be.eql({id: 1, name: 'Aurthur Velti', email: 'avelti0@live.com'})
       expect(results[19]).to.be.eql({id: 20, name: 'Penelope Searchfield', email: 'psearchfieldj@youtube.com'})
-    }).catch(error => console.log(error))
+    })
   })
 })
 
@@ -21,7 +21,7 @@ describe('currentAndFutureBookings()', function() {
       expect(typeof results).to.eql('object')
       expect(results[0]).to.deep.include({room_number: '5A', name: 'Billi Coyne'})
       expect(results[38]).to.deep.include({room_number: '4A', name: 'Janie Powers'})
-    }).catch(error => console.log(error))
+    })
   })
 })
 
@@ -32,6 +32,6 @@ describe('roomCapacityAndAvailability()', function() {
       expect(typeof results).to.eql('object')
       expect(results[1]).to.deep.eql({ room_number: '3F', capacity: 6, availability: 'true' })
       expect(results[17]).to.deep.eql({ room_number: '3E', capacity: 3, availability: 'true' })
-    }).catch(error => console.log(error))
+    })
   })
 })
