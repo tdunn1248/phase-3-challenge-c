@@ -7,6 +7,9 @@
     "db:create": "dropdb --if-exists hotel_db && createdb hotel_db",
     "db:schema": "psql hotel_db < ./models/schema.sql",
     "db:insert": "psql hotel_db < ./models/load-data.sql",
+    "db:test-create": "dropdb --if-exists hotel_test_db && createdb hotel_test_db",
+    "db:test-schema": "psql hotel_test_db < ./test/models_test/schema_test.sql",
+    "db:test-insert": "psql hotel_test_db < ./test/models_test/load-test-data.sql",
     "test": "NODE_ENV=test mocha || true"
   },
   "author": "",
